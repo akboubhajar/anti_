@@ -666,30 +666,6 @@
   <script src="swiper-bundle.min.js.download"></script>
   <script src="swiper-bundle.min.js.download"></script>
 
-  <!--
-    <script>
-    const slides = document.querySelector('.slides');
-    const slideCount = document.querySelectorAll('.slide').length / 2; // Considering duplicates for looping
-    const slideWidth = document.querySelector('.slide').clientWidth; // Get the width of one slide
-    let currentIndex = 0;
-
-    function goToSlide(index) {
-      currentIndex = index - 1; // Adjust index to zero-based for array access
-      const translateValue = -currentIndex * slideWidth;
-      slides.style.transition = 'transform 1s ease-in-out';
-      slides.style.transform = `translateX(${translateValue}px)`;
-    }
-
-    setInterval(() => {
-      currentIndex = (currentIndex + 1) % slideCount;
-      const translateValue = -currentIndex * slideWidth;
-      slides.style.transition = 'transform 1s ease-in-out';
-      slides.style.transform = `translateX(${translateValue}px)`;
-    }, 3000); // Change slide every 3 seconds
-  </script>
-
- -->
-
   <script>
     const images = document.querySelectorAll('.image');
     const priceOverlays = document.querySelectorAll('.price-overlay');
