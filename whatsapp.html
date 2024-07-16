@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نتائج عبر الواتساب</title>
+    <style>
+        body {
+            background-color: #272C5C;
+            font-family: 'Expo Arabic', sans-serif;
+            font-style: normal;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            font-size: 22px;
+            color: white;
+        }
+
+        .slider-container {
+            position: relative;
+            overflow: hidden;
+            margin-top: 25px;
+        }
+
+        .slider {
+            display: flex;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .slider img {
+            flex: 0 0 100%;
+            width: 100%;
+            height: auto;
+        }
+
+        .pagination {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+        }
+
+        .pagination-item {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background-color: rgba(255, 255, 255, 0.5);
+            margin: 0 5px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .pagination-item.active {
+            background-color: #333;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: transparent;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <button onclick="window.location.href='./index.html'">&lt;</button>
+        نتائج عبر الواتساب
+    </div>
+
+    <div class="slider-container">
+        <div class="slider">
+            <img src="./img/whatsapp.png" alt="Image 1">
+            <img src="./img/whatsapp.png" alt="Image 2">
+            <img src="./img/whatsapp.png" alt="Image 3">
+            <img src="./img/whatsapp.png" alt="Image 4">
+            <img src="./img/whatsapp.png" alt="Image 5">
+        </div>
+        <div class="pagination">
+            <span class="pagination-item active"></span>
+            <span class="pagination-item"></span>
+            <span class="pagination-item"></span>
+            <span class="pagination-item"></span>
+            <span class="pagination-item"></span>
+        </div>
+    </div>
+
+    <script>
+        const sliderContainer = document.querySelector('.slider-container');
+        const slider = document.querySelector('.slider');
+        const paginationItems = document.querySelectorAll('.pagination-item');
+        let currentIndex = 0;
+
+        function updateSlider() {
+            const containerWidth = sliderContainer.offsetWidth;
+            slider.style.transform = `translateX(${-currentIndex * containerWidth}px)`;
+            paginationItems.forEach((item, index) => {
+                item.classList.toggle('active', index === currentIndex);
+            });
+        }
+
+        paginationItems.forEach((item, index) => {
+            item.addEventListener('click', () => {
+                currentIndex = index;
+                updateSlider();
+            });
+        });
+
+    </script>
+</body>
+
+</html>
