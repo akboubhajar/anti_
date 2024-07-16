@@ -1,3 +1,4 @@
+/** GOOD TO */ 
 document.addEventListener('DOMContentLoaded', function() {
   const galleryContainer = document.querySelector('.gallery-container');
   const galleryControlsContainer = document.querySelector('.gallery-controls');
@@ -56,8 +57,7 @@ document.addEventListener('DOMContentLoaded', function() {
   exampleCarousel.updateGallery();
 });
 
-
-
+/** INGRED */ 
 document.addEventListener('DOMContentLoaded', function() {
   const galleryContainer1 = document.querySelector('.gallery-container1');
   const galleryControlsContainer1 = document.querySelector('.gallery-controls1');
@@ -118,25 +118,3 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-
-
-/*
-var swiper = new Swiper('.swiper-container', {
-  slidesPerView: 1,
-  spaceBetween: 10,
-  loop: true,
-  pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-  },
-  effect: 'coverflow',
-  coverflowEffect: {
-      rotate: 10,
-      stretch: 0,
-      depth: 10,
-      modifier: 1,
-      slideShadows: false,
-  },
-});
-
-*/
