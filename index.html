@@ -329,14 +329,14 @@
       </div>
 
       <!-- part watch video - how to use -->
-      <div class="view-SduRQY" data-id="1:203">
-        <button class="rectangle-15" data-id="1:204">
-        </button>
-        <p class="text_label-mD4qeN valign-text-middle text_label" data-id="1:205">شاهد طريقة الاستعمال عبر الفيديو
-        </p>
-      </div>
 
       <div class="view-SduRQY" data-id="1:203">
+        <a href="https://www.youtube.com/watch?v=X_rfkhU_DPc">
+          <button class="rectangle-15" data-id="1:204"></button>
+          <p class="text_label-mD4qeN valign-text-middle text_label" data-id="1:205">شاهد طريقة الاستعمال عبر الفيديو
+          </p>
+        </a>
+
         <p class="text_label-8WceJH text_label" data-id="1:206">ستــلاحظ النتيــجة فــي اقل من شهر لاستعمالك المضاد
           الحيوي الطبيعي</p>
       </div>
@@ -542,14 +542,25 @@
 
         <div class="return-policy-JW0lOB valign-text-middle expoarabic-book-normal-black-37px" data-id="1:324">return
           policy</div>
+
         <div class="terms-of-use-JW0lOB valign-text-middle expoarabic-book-normal-black-37px" data-id="1:325">terms of
           use</div>
+
         <div class="privacy-policy-JW0lOB valign-text-middle expoarabic-book-normal-black-37px" data-id="1:326">
-          privacy
-          policy</div>
-        <div class="rectangle-44-JW0lOB" data-id="1:327"></div>
-        <div class="rectangle-45-JW0lOB" data-id="1:328"></div>
-        <div class="rectangle-46-JW0lOB" data-id="1:329"></div>
+          privacy policy</div>
+
+        <a href="./audio.html">
+          <div class="rectangle-44-JW0lOB" data-id="1:327"></div>
+        </a>
+
+        <a href="#">
+          <div class="rectangle-45-JW0lOB" data-id="1:328"></div>
+        </a>
+
+        <a href="#">
+          <div class="rectangle-46-JW0lOB" data-id="1:329"></div>
+        </a>
+
         <div class="x0661715372-JW0lOB valign-text-middle" data-id="1:330">0661715372</div><img
           class="youssef-herb-logo-01-1-JW0lOB" data-id="1:331" src="./img/youssef-herb-logo-01-1.png"
           alt="youssef herb logo-01 1">
@@ -575,6 +586,13 @@
     }
 
     showImage(0);
+
+  </script>
+  <script>
+    document.querySelector('.view-SduRQY').addEventListener('click', function () {
+      console.log('Div clicked!');
+
+    });
 
   </script>
 </body>
