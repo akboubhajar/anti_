@@ -10,6 +10,8 @@
             background-color: #272C5C;
             font-family: 'Expo Arabic', sans-serif;
             font-style: normal;
+            margin: 0;
+            padding: 0;
         }
 
         .header {
@@ -29,21 +31,27 @@
 
         .slider {
             display: flex;
-            transition: transform 0.3s ease-in-out;
+            transition: transform 0.6s ease-in-out;
+            width: 100%;
         }
 
         .slider img {
-            flex: 0 0 100%;
+            flex: 0 0 20%;
             width: 100%;
             height: auto;
         }
 
         .pagination {
-            position: absolute;
-            bottom: 10px;
-            left: 50%;
-            transform: translateX(-50%);
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
             display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 0;
+            background-color: #272C5C;
+            z-index: 1000;
         }
 
         .pagination-item {
@@ -109,7 +117,12 @@
             paginationItems.forEach((item, index) => {
                 item.classList.toggle('active', index === currentIndex);
             });
+
+            // Adjust for the fixed pagination at the bottom
+            const footerHeight = document.querySelector('.pagination').offsetHeight;
+            sliderContainer.style.paddingBottom = `${footerHeight}px`;
         }
+
 
         paginationItems.forEach((item, index) => {
             item.addEventListener('click', () => {
@@ -118,6 +131,9 @@
             });
         });
 
+        updateSlider();
+
+        window.addEventListener('resize', updateSlider);
     </script>
 </body>
 

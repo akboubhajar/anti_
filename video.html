@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مقاطع الفيديو</title>
+
+    <style>
+        body {
+            background-color: #454545;
+            font-family: 'Expo Arabic', sans-serif;
+            font-style: normal;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            font-size: 22px;
+            color: white;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: transparent;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        footer {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            padding: 20px 0;
+            background-color: #1E1E30;
+            position: absolute;
+            bottom: 0;
+            margin: 0px -10px;
+        }
+
+        .control-panel {
+            display: flex;
+            align-items: center;
+        }
+
+        .control-button {
+            background: none;
+            border: none;
+            color: #C3A4F3;
+            margin: 0 10px;
+            cursor: pointer;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+        }
+
+        .control-button:focus {
+            outline: none;
+        }
+
+        .control-button#pause {
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .time {
+            font-size: 12px;
+            position: absolute;
+            bottom: -10px;
+            background: #1E1E30;
+            border-radius: 50%;
+            padding: 2px 6px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="header">
+        <button onclick="window.location.href='./index.html'">&lt;</button>
+        مقاطع الفيديو
+    </div>
+
+    <footer>
+        <div class="control-panel">
+
+            <button class="control-button" id="rewind">
+                <svg width="24" height="24" viewBox="0 0 24 24" transform="rotate(180)">
+                    <path fill="#C3A4F3" d="M6 19.14V4.86l8.5 7.14-8.5 7.14zM16 19.14V4.86L24.5 12 16 19.14z"></path>
+                </svg>
+            </button>
+
+            <button class="control-button" id="previous">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="#C3A4F3" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20 4L8.66667 12L20 20V4Z"></path>
+                    <path d="M4 20H6.66667V4H4V20Z"></path>
+                </svg>
+            </button>
+
+            <button class="control-button" id="pause">
+                <svg width="24" height="24" viewBox="0 0 24 24">
+                    <path fill="#C3A4F3" d="M8 19h3V5H8v14zm5-14v14h3V5h-3z"></path>
+                </svg>
+            </button>
+
+            <button class="control-button" id="next">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="#C3A4F3">
+                    <path d="M4 20L15.3333 12L4 4V20Z"></path>
+                    <path d="M20 4H17.3333V20H20V4Z"></path>
+                </svg>
+            </button>
+
+            <button class="control-button" id="forward">
+                <svg width="24" height="24" viewBox="0 0 24 24">
+                    <path fill="#C3A4F3" d="M6 19.14V4.86l8.5 7.14-8.5 7.14zM16 19.14V4.86L24.5 12 16 19.14z"></path>
+                </svg>
+            </button>
+
+        </div>
+    </footer>
+
+    <script>
+        const rewindButton = document.getElementById('rewind');
+        const previousButton = document.getElementById('previous');
+        const pauseButton = document.getElementById('pause');
+        const nextButton = document.getElementById('next');
+        const forwardButton = document.getElementById('forward');
+
+        rewindButton.addEventListener('click', () => {
+            console.log('Rewind button clicked');
+        });
+
+        previousButton.addEventListener('click', () => {
+            console.log('Previous button clicked');
+        });
+
+        pauseButton.addEventListener('click', () => {
+            console.log('Pause button clicked');
+        });
+
+        nextButton.addEventListener('click', () => {
+            console.log('Next button clicked');
+        });
+
+        forwardButton.addEventListener('click', () => {
+            console.log('Forward button clicked');
+        });
+    </script>
+</body>
+
+</html>
