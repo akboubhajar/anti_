@@ -118,6 +118,7 @@ body {
 
 .head1 .x250-dh {
   background-color: transparent;
+  color: var(--white);
    /*  font-family: var(--font-family-expo_arabic-bold);*/
   font-style: normal;
   font-weight: 700;
