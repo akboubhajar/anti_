@@ -1849,18 +1849,25 @@ background: linear-gradient(0deg, rgba(1, 60, 14, 0.31), rgba(1, 60, 14, 0.31)),
 }
 
 .radio-ellipse-16 {
-  left: 867px;
-  top: 368px;
+ /* left: 867px;
+  top: 368px;*/
+  left: 800px;
+  top: 40px;
 }
 
 .radio-ellipse-17 {
-  left: 867px;
-  top: 530px;
+  /*left: 867px;
+  top: 530px;*/
+  left: 800px;
+  top: 40px;
 }
 
 .radio-ellipse-15 {
+  /*
   left: 870px;
-  top: 224px;
+  top: 224px;*/
+  left: 800px;
+    top: 24px;
 }
 
 .radio-ellipse-15:checked,
@@ -1873,6 +1880,8 @@ background: linear-gradient(0deg, rgba(1, 60, 14, 0.31), rgba(1, 60, 14, 0.31)),
   position: absolute;
   cursor: pointer;
   z-index: 2; 
+  display: block;
+
 }
 
 .head1 .x500-50-350-iiKxKp,
@@ -2505,12 +2514,6 @@ animation: pop-in 0.2s ease-in-out, pop-up 0.7s linear infinite;
   transform: translateX(-50%);
 }
 
-.gallery-controls {
-  display: flex;
-  justify-content: center;
-  margin: 25px 0;
-  height: 100px;
-}
 
 .gallery-controls button {
   background-color: transparent;
@@ -2855,3 +2858,27 @@ animation: pop-in 0.2s ease-in-out, pop-up 0.7s linear infinite;
   cursor: pointer; 
 }
 
+/***************************************/
+.gallery-controls {
+  display: flex;
+  justify-content: center;
+  margin: 25px 0;
+  height: 100px;
+}
+
+.gallery-controls button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.gallery-controls-prev {
+  left: 0;
+}
+
+.gallery-controls-next {
+  right: 0;
+}

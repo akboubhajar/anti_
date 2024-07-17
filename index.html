@@ -95,6 +95,14 @@
         <div class="gallery">
           <div class="gallery-container">
             <div class="gallery-controls">
+
+              <button class="gallery-controls-prev">
+                <!-- SVG for Previous Button -->
+                <svg width="24" height="24" viewBox="0 0 24 24">
+                  <path fill="#000000" d="M15.41 16.59L10.83 12 15.41 7.41 14 6l-6 6 6 6z" />
+                </svg>
+              </button>
+
               <div class="gallery-item gallery-item-1" data-index="1">
                 <img src="img/mask-group-1@2x.png">
                 <div class="gallery-text">
@@ -124,12 +132,18 @@
                 <img src="img/sans-tit-plan-de-travail-1-1.png">
                 <div class="gallery-text">زيادة القوة الجنسية</div>
               </div>
+
+              <button class="gallery-controls-next">
+                <!-- SVG for Next Button -->
+                <svg width="24" height="24" viewBox="0 0 24 24">
+                  <path fill="#000000" d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z" />
+                </svg>
+              </button>
+
+
             </div>
           </div>
         </div>
-
-
-
       </div>
 
       <!-- 2nd button: order now  -->
@@ -380,10 +394,10 @@
       </div>
 
       <!-- part: Formulaire -->
-      <div class="view-MPSg0x" data-id="1:239">
+      <div id="form" class="view-MPSg0x" data-id="1:239">
         <div class="rectangle-33-iiKxKp" data-id="1:240"></div>
         <p class="text_label-iiKxKp valign-text-middle text_label" data-id="1:241">للطلب، يرجى إكمال النموذج أسفله</p>
-        <div class="group-22-iiKxKp" data-id="1:242"><img class="star-1-Bo57cx star-1" data-id="1:243"
+        <div id="form" class="group-22-iiKxKp" data-id="1:242"><img class="star-1-Bo57cx star-1" data-id="1:243"
             src="./img/star-1-1.svg" alt="Star 1"><img class="star-2-Bo57cx star-2" data-id="1:244"
             src="./img/star-2-1.svg" alt="Star 2"><img class="star-4-Bo57cx star-4" data-id="1:245"
             src="./img/star-4-1.svg" alt="Star 4"><img class="star-3-Bo57cx star-3" data-id="1:246"
@@ -396,16 +410,22 @@
         </div>
 
         <!--تأكيد الطلب-->
-        <button class="group-53-iiKxKp head1" data-id="1:248">
+        <button type="submit" class="group-53-iiKxKp head1" style="cursor: pointer;">
           <div class="text_label-ozZpDL valign-text-middle text_label" data-id="1:251">تأكيد الطلب</div>
         </button>
+
         <!-- Rectangle 1 -->
-        <div class="rectangle-24-iiKxKp" data-id="1:271">
+        <div class="rectangle-24-iiKxKp" data-id="1:271" onclick="selectRadio('radio-1')">
+          <input type="radio" id="radio-1" class="radio-ellipse-15" name="price" value="250" checked="">
+          <label for="radio-1" class="radio-label"></label>
           <p class="x500-250-iiKxKp valign-text-middle expoarabic-book-normal-black-35px" data-id="1:273">500
             غ&nbsp;&nbsp;المضــــاد الحيــوي الطبيـــعي ب 250 درهم</p>
         </div>
+
         <!-- Rectangle 2 -->
-        <div class="rectangle-25-iiKxKp" data-id="1:263">
+        <div class="rectangle-25-iiKxKp" data-id="1:263" onclick="selectRadio('radio-2')">
+          <input type="radio" id="radio-2" class="radio-ellipse-16" name="price" value="350">
+          <label for="radio-2" class="radio-label"></label>
           <p class="x500-50-350-iiKxKp valign-text-middle expoarabic-book-normal-black-35px" data-id="1:267">
             500 غ المضـــــاد الحيــوي الطبيعـــي + 50 مل زيـــــت <br> النشـــــــوة الملــكــــــي ب 350 درهم
             <span class="additional-text">
@@ -415,7 +435,10 @@
         </div>
 
         <!-- Rectangle 3 -->
-        <div class="rectangle-34-iiKxKp" data-id="1:264">
+        <div class="rectangle-34-iiKxKp" data-id="1:264" onclick="selectRadio('radio-3')">
+          <input type="radio" id="radio-3" class="radio-ellipse-17" name="price" value="450">
+          <label for="radio-3" class="radio-label"></label>
+
           <p class="x1-50-450-iiKxKp valign-text-middle expoarabic-book-normal-black-35px" data-id="1:268">
             1 كليو غرام
             المضاد الحيـوي الطبيعــي + 50 مل زيـــت <br>النشــــــوة الملــكـــــــي ب 450 درهم
@@ -425,18 +448,7 @@
 
         </div>
 
-        <!-- radio button 1 -->
-        <input type="radio" id="radio-1" name="radio-group" class="radio-ellipse-15">
-        <label for="radio-1" class="radio-label"></label>
-
-        <!-- radio button 2 -->
-        <input type="radio" id="radio-2" name="radio-group" class="radio-ellipse-16">
-        <label for="radio-2" class="radio-label"></label>
-
-        <!-- radio button 3 -->
-        <input type="radio" id="radio-3" name="radio-group" class="radio-ellipse-17">
-        <label for="radio-3" class="radio-label"></label>
-
+        <!--- form bottom -->
         <h1 class="title-iiKxKp valign-text-middle" data-id="1:274">250DH</h1>
         <div class="x300-dh-iiKxKp valign-text-middle" data-id="1:275">300dh</div>
         <div class="group-8737-iiKxKp" data-id="1:276">
@@ -444,22 +456,22 @@
 
             <div class="rectangle-29-qvM7ui">
               <img data-id="1:278" src="./img/rectangle-29.svg" alt="Rectangle 29">
-              <input type="text" placeholder="الإسم الكامل">
+              <input type="text" placeholder="الإسم الكامل" name="nom" id="fullname">
             </div>
 
             <div class="rectangle-32-qvM7ui">
               <img data-id="1:279" src="./img/rectangle-29.svg" alt="Rectangle 32">
-              <input type="text" placeholder="رقــــم الهاتف">
+              <input type="text" placeholder="رقــــم الهاتف" name="tel" id="phone">
             </div>
 
             <div class="rectangle-30-qvM7ui">
               <img data-id="1:280" src="./img/rectangle-29.svg" alt="Rectangle 30">
-              <input type="text" placeholder="المدينة">
+              <input type="text" placeholder="المدينة" name="ville" id="city">
             </div>
 
             <div class="rectangle-31-qvM7ui">
               <img data-id="1:281" src="./img/rectangle-29.svg" alt="Rectangle 31">
-              <input type="text" placeholder="العنـــوان">
+              <input type="text" placeholder="العنـــوان" name="adr" id="address">
             </div>
 
             <!-- user -->
@@ -594,6 +606,12 @@
 
     });
 
+  </script>
+
+  <script>
+    function selectRadio(radioId) {
+      document.getElementById(radioId).checked = true;
+    }
   </script>
 </body>
 
