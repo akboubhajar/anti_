@@ -11,11 +11,14 @@
             background-color: #454545;
             font-family: 'Expo Arabic', sans-serif;
             font-style: normal;
+            margin: 0;
+            padding: 0;
+            color: white;
         }
 
         .header {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
             padding: 20px;
             font-size: 22px;
@@ -38,9 +41,8 @@
             justify-content: center;
             padding: 20px 0;
             background-color: #1E1E30;
-            position: absolute;
+            position: fixed;
             bottom: 0;
-            margin: 0px -10px;
         }
 
         .control-panel {
@@ -75,33 +77,67 @@
             justify-content: center;
         }
 
-        .time {
-            font-size: 12px;
-            position: absolute;
-            bottom: -10px;
-            background: #1E1E30;
-            border-radius: 50%;
-            padding: 2px 6px;
+        .video-container {
+            display: flex;
+            justify-content: center;
+            overflow: hidden;
+            padding: 20px;
+            width: 100%;
+            max-width: 800px;
+            margin: auto;
+            position: relative;
+        }
+
+        .video-container video {
+            width: 120%;
+            height: auto;
+            /* border: 2px solid #C3A4F3; */
+            /* border-radius: 8px; */
+            display: none;
+        }
+
+        .video-container video.active {
+            display: block;
+            /* Show only the active video */
         }
     </style>
-
 </head>
 
 <body>
     <div class="header">
-        <button onclick="window.location.href='./index.html'">&lt;</button>
+        <!-- <button onclick="window.location.href='./index.html'">&lt;</button>-->
         مقاطع الفيديو
+    </div>
+
+    <div class="video-container">
+        <video class="active" id="video1">
+            <source src="./videos/01.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <video id="video2">
+            <source src="./videos/02.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <video id="video3">
+            <source src="./videos/03.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <video id="video4">
+            <source src="./videos/04.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <video id="video5">
+            <source src="./videos/05.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <video id="video6">
+            <source src="./videos/06.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
     </div>
 
     <footer>
         <div class="control-panel">
-
-            <button class="control-button" id="rewind">
-                <svg width="24" height="24" viewBox="0 0 24 24" transform="rotate(180)">
-                    <path fill="#C3A4F3" d="M6 19.14V4.86l8.5 7.14-8.5 7.14zM16 19.14V4.86L24.5 12 16 19.14z"></path>
-                </svg>
-            </button>
-
             <button class="control-button" id="previous">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="#C3A4F3" xmlns="http://www.w3.org/2000/svg">
                     <path d="M20 4L8.66667 12L20 20V4Z"></path>
@@ -121,42 +157,49 @@
                     <path d="M20 4H17.3333V20H20V4Z"></path>
                 </svg>
             </button>
-
-            <button class="control-button" id="forward">
-                <svg width="24" height="24" viewBox="0 0 24 24">
-                    <path fill="#C3A4F3" d="M6 19.14V4.86l8.5 7.14-8.5 7.14zM16 19.14V4.86L24.5 12 16 19.14z"></path>
-                </svg>
-            </button>
-
         </div>
     </footer>
 
     <script>
-        const rewindButton = document.getElementById('rewind');
+        const videos = document.querySelectorAll('.video-container video');
         const previousButton = document.getElementById('previous');
-        const pauseButton = document.getElementById('pause');
         const nextButton = document.getElementById('next');
-        const forwardButton = document.getElementById('forward');
+        const pauseButton = document.getElementById('pause');
+        let currentIndex = 0;
 
-        rewindButton.addEventListener('click', () => {
-            console.log('Rewind button clicked');
-        });
+        function showVideo(index) {
+            videos.forEach((video, i) => {
+                video.classList.toggle('active', i === index);
+                if (i === index) {
+                    video.play(); // Play the active video
+                } else {
+                    video.pause(); // Pause other videos
+                }
+            });
+        }
 
         previousButton.addEventListener('click', () => {
-            console.log('Previous button clicked');
-        });
-
-        pauseButton.addEventListener('click', () => {
-            console.log('Pause button clicked');
+            currentIndex = (currentIndex > 0) ? currentIndex - 1 : videos.length - 1;
+            showVideo(currentIndex);
         });
 
         nextButton.addEventListener('click', () => {
-            console.log('Next button clicked');
+            currentIndex = (currentIndex < videos.length - 1) ? currentIndex + 1 : 0;
+            showVideo(currentIndex);
         });
 
-        forwardButton.addEventListener('click', () => {
-            console.log('Forward button clicked');
+        pauseButton.addEventListener('click', () => {
+            const activeVideo = videos[currentIndex];
+            if (activeVideo.paused) {
+                activeVideo.play(); // Play the currently active video if paused
+                pauseButton.querySelector('path').setAttribute('d', 'M8 19h3V5H8v14zm5-14v14h3V5h-3z'); // Change icon to pause
+            } else {
+                activeVideo.pause(); // Pause the currently active video if playing
+                pauseButton.querySelector('path').setAttribute('d', 'M8 19h3V5H8v14zm5-14v14h3V5h-3z'); // Change icon to play
+            }
         });
+
+        showVideo(currentIndex); // Show the first video initially
     </script>
 </body>
 

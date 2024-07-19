@@ -1,62 +1,5 @@
-/** GOOD TO 
-document.addEventListener('DOMContentLoaded', function() {
-  const galleryContainer = document.querySelector('.gallery-container');
-  const galleryControlsContainer = document.querySelector('.gallery-controls');
-  const galleryControls = ['', ''];
-  const galleryItems = document.querySelectorAll('.gallery-item');
 
-  class Carousel {
-      constructor(container, items, controls) {
-          this.carouselContainer = container;
-          this.carouselControls = controls;
-          this.carouselArray = [...items];
-      }
 
-      updateGallery() {
-          this.carouselArray.forEach(el => {
-              el.classList.remove('gallery-item-1', 'gallery-item-2', 'gallery-item-3', 'gallery-item-4', 'gallery-item-5');
-          });
-
-          this.carouselArray.slice(0, 5).forEach((el, i) => {
-              el.classList.add(`gallery-item-${i + 1}`);
-          });
-      }
-
-      setCurrentState(direction) {
-          if (direction.className.includes('gallery-controls-previous')) {
-              this.carouselArray.unshift(this.carouselArray.pop());
-          } else {
-              this.carouselArray.push(this.carouselArray.shift());
-          }
-          this.updateGallery();
-      }
-
-      setControls() {
-          this.carouselControls.forEach(control => {
-              const button = document.createElement('button');
-              button.className = `gallery-controls-${control}`;
-              button.innerText = control;
-              galleryControlsContainer.appendChild(button);
-          });
-      }
-
-      useControls() {
-          const triggers = [...galleryControlsContainer.childNodes];
-          triggers.forEach(control => {
-              control.addEventListener('click', e => {
-                  e.preventDefault();
-                  this.setCurrentState(control);
-              });
-          });
-      }
-  }
-
-  const exampleCarousel = new Carousel(galleryContainer, galleryItems, galleryControls);
-  exampleCarousel.setControls();
-  exampleCarousel.useControls();
-  exampleCarousel.updateGallery();
-});
- */
 /** INGRED */ 
 document.addEventListener('DOMContentLoaded', function() {
   const galleryContainer1 = document.querySelector('.gallery-container1');
@@ -117,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-
+/** 
 document.addEventListener('DOMContentLoaded', function() {
   const galleryContainer = document.querySelector('.gallery-container');
   const galleryControlsContainer = document.querySelector('.gallery-controls');
@@ -175,4 +118,29 @@ document.addEventListener('DOMContentLoaded', function() {
   exampleCarousel.useControls();
   exampleCarousel.updateGallery();
 });
+*/
+function updatePrice(element) {
+  var radio = element.querySelector('input[type="radio"]');
+  var price = parseInt(radio.value);
+
+  var priceDisplay = document.querySelector('.title-iiKxKp');
+  priceDisplay.innerText = price + 'DH';
+  var priceDiv = document.querySelector('.x300-dh-iiKxKp');
+  var newPrice = price + 50;
+  priceDiv.innerText = newPrice + 'DH';
+}
+
+function selectRadio(radioId) {
+  document.getElementById(radioId).checked = true;
+}
+
+function changeColor(element) {
+  var rectangles = document.querySelectorAll('.rectangle-24-iiKxKp, .rectangle-25-iiKxKp, .rectangle-34-iiKxKp');
+
+  rectangles.forEach(function (rect) {
+    rect.style.backgroundColor = 'var(--white)';
+  });
+
+  element.style.backgroundColor = '#36fb05';
+}
 
