@@ -2534,9 +2534,9 @@ animation: pop-in 0.2s ease-in-out, pop-up 0.7s linear infinite;
 }
 
 .close {
-  color: #aaa;
+  color: #050505;
   align-self: flex-end; /* Adjust close button position */
-  font-size: 28px;
+  font-size: 40px;
   font-weight: bold;
 }
 
