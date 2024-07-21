@@ -1075,14 +1075,13 @@ background: linear-gradient(0deg, rgba(1, 60, 14, 0.31), rgba(1, 60, 14, 0.31)),
 
 .head1 .text_label-mD4qeN {
   color: var(--green-house);
-  font-size: var(--font-size-xl);
+  font-size: var(--font-size-xxl);
   font-style: normal;
   font-weight: 900;
   height: -26px;
-
   line-height: normal;
   text-align: center;
-  /* top: -34px; */
+  top: -28px;
   width: 866px;
 }
 
@@ -2079,18 +2078,7 @@ text-align: right;
   place-items: center;
 }
 
-.head1 .text_label-mD4qeN {
-  color: var(--green-house);
-  font-size: var(--font-size-xxxl);
-  font-style: normal;
-  font-weight: 700;
-  height: 41px;
-  /* height: 41px; */
-  line-height: normal;
-  text-align: center;
-  top: -37px;
-  width: 866px;
-}
+
 
 .head1 .group-51 {
   background-color: transparent;
