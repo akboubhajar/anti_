@@ -1071,16 +1071,15 @@ background: linear-gradient(0deg, rgba(1, 60, 14, 0.31), rgba(1, 60, 14, 0.31)),
 }
 
 .head1 .text_label-mD4qeN {
-  color: var(--green-house);  
-  font-size: 54px;
+  color: var(--green-house);
+  font-size: var(--font-size-xxl);
   font-style: normal;
-  font-weight: 700;
-  height: 69px;
-  left: 16px;
-  letter-spacing: 0px;
+  font-weight: 900;
+  height: -26px;
+  height: 49px;
   line-height: normal;
   text-align: center;
-  top: -32px;
+  /* top: -34px; */
   width: 866px;
 }
 
@@ -2523,7 +2522,7 @@ animation: pop-in 0.2s ease-in-out, pop-up 0.7s linear infinite;
  border: 1px solid #888;
  */
   margin: 0;
-  padding: 20px;
+ /* padding: 20px;*/
  
   width: 90%;
   max-width: 80%; /* Adjust max-width for larger videos */
@@ -2536,7 +2535,7 @@ animation: pop-in 0.2s ease-in-out, pop-up 0.7s linear infinite;
 .close {
   color: #050505;
   align-self: flex-end; /* Adjust close button position */
-  font-size: 40px;
+  font-size: 60px;
   font-weight: bold;
 }
 

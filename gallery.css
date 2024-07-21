@@ -424,9 +424,9 @@
   
   .custom-gallery-text {
     position: relative;
-    text-shadow: 19px 8px 11px #083608a3;
+    text-shadow: 19px 4px 14px #083608a3;
     color: white;
-    padding: 10px 8px;
+    padding: 9px 7px;
     border-radius: 2px;
     color: var(--green-house);
     font-size: var(--font-size-s);
@@ -434,9 +434,7 @@
     font-weight: 600;
     line-height: normal;
     text-align: center;
-     
-  }
-  
+}
   .custom-swiper-pagination {
     position: absolute;
     bottom: 10px;
@@ -507,7 +505,7 @@
     width: 77%;
     height: 83%;
     z-index: 1;
-    border-radius: 15px;
+    border-radius: 200px;
     object-fit: cover;
     margin-top: 130px;
   }
