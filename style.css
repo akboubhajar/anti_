@@ -1075,11 +1075,11 @@ background: linear-gradient(0deg, rgba(1, 60, 14, 0.31), rgba(1, 60, 14, 0.31)),
 
 .head1 .text_label-mD4qeN {
   color: var(--green-house);
-  font-size: var(--font-size-xxl);
+  font-size: var(--font-size-xl);
   font-style: normal;
   font-weight: 900;
   height: -26px;
-  height: 49px;
+
   line-height: normal;
   text-align: center;
   /* top: -34px; */
