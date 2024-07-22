@@ -2126,9 +2126,9 @@ text-align: right;
 }
 
 
-@keyframes moveRightToLeft {
+@keyframes moveLeftToRight {
   0% {
-    transform: translateX(100%);
+    transform: translateX(-100%);
   }
 
   100% {
@@ -2138,8 +2138,9 @@ text-align: right;
 
 .text_label-hqn7q6 {
   display: inline-block;
-  animation: moveRightToLeft 5s linear infinite;
+  animation: moveLeftToRight 5s linear infinite;
 }
+
 
 /*BUTTOON 1 */
 
@@ -2524,16 +2525,34 @@ animation: pop-in 0.2s ease-in-out, pop-up 0.7s linear infinite;
   align-items: center; /* Center the content horizontally */
 }
 
+/*
 .close {
   color: #050505;
-  align-self: flex-end; /* Adjust close button position */
+  align-self: flex-end;
   font-size: 60px;
   font-weight: bold;
+
+  
+}
+*/
+.close {
+  color: #ffffff;
+  align-self: flex-end;
+  font-size: 117px;
+  font-weight: bolder;
+  border: 2px solid #bc0909;
+  background-color: #ee0015;
+  border-radius: 50%;
+  width: 1em;
+  height: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .close:hover,
 .close:focus {
-  color: black;
+  color: rgb(0, 0, 0);
   text-decoration: none;
   cursor: pointer;
 }

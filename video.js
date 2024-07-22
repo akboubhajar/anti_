@@ -1,7 +1,6 @@
 // JavaScript for Video Modal
 
 document.addEventListener('DOMContentLoaded', function () {
-    // Video Modal
     var videoModal = document.getElementById("videoModal");
     var openVideoModalButton = document.getElementById("openVideoModal");
     var videoClose = document.getElementById("videoClose");
@@ -28,7 +27,6 @@ document.addEventListener('DOMContentLoaded', function () {
         videoModal.style.display = 'none';
     });
 
-    // Content Modal
     var contentModal = document.getElementById("contentModal");
     var openContentModalButton = document.getElementById("openContentModal");
     var contentClose = document.getElementById("contentClose");
@@ -48,11 +46,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
-//******************************************************* */
-//******************************************************* */
-//******************************************************* */
-//******************************************************* */
-
 // JavaScript for Content Modal
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -61,23 +54,20 @@ document.addEventListener('DOMContentLoaded', function () {
     var contentClose = document.getElementById("contentClose");
     var contentFrame = document.getElementById("contentFrame");
 
-    // Function to open the content modal
     viewElement.onclick = function() {
-        contentFrame.src = "video.html"; // Set the source of the iframe to the desired page
+        contentFrame.src = "video.html"; 
         contentModal.style.display = "flex";
     }
 
-    // Event listener to close the content modal
     contentClose.onclick = function() {
         contentModal.style.display = "none";
-        contentFrame.src = ""; // Clear the iframe source to stop loading content when closed
+        contentFrame.src = ""; 
     }
 
-    // Close the modal when clicking outside the modal content
     window.onclick = function(event) {
         if (event.target === contentModal) {
             contentModal.style.display = "none";
-            contentFrame.src = ""; // Clear the iframe source
+            contentFrame.src = "";
         }
     }
 });
@@ -91,29 +81,27 @@ document.addEventListener('DOMContentLoaded', function () {
     var audioContentClose = document.getElementById("audioContentClose");
     var audioContentFrame = document.getElementById("audioContentFrame");
 
-    // Function to open the audio content modal
+    
     openAudioContentModalButton.onclick = function() {
-        audioContentFrame.src = "audio.html"; // Set the source of the iframe to the desired page
+        audioContentFrame.src = "audio.html"; 
         audioContentModal.style.display = "flex";
     }
 
-    // Event listener to close the audio content modal
     audioContentClose.onclick = function() {
         audioContentModal.style.display = "none";
-        audioContentFrame.src = ""; // Clear the iframe source to stop loading content when closed
+        audioContentFrame.src = ""; 
     }
 
-    // Close the modal when clicking outside the modal content
     window.onclick = function(event) {
         if (event.target === audioContentModal) {
             audioContentModal.style.display = "none";
-            audioContentFrame.src = ""; // Clear the iframe source
+            audioContentFrame.src = ""; 
         }
     }
 });
 
 
-// JavaScript for WhatsApp Messages Content Modal
+// JavaScript for Whatsapp Content Modal
 
 document.addEventListener('DOMContentLoaded', function () {
     var whatsappContentModal = document.getElementById("whatsappContentModal");
@@ -121,23 +109,20 @@ document.addEventListener('DOMContentLoaded', function () {
     var whatsappContentClose = document.getElementById("whatsappContentClose");
     var whatsappContentFrame = document.getElementById("whatsappContentFrame");
 
-    // Function to open the WhatsApp content modal
     openWhatsappContentModalButton.onclick = function() {
-        whatsappContentFrame.src = "whatsapp.html"; // Set the source of the iframe to the desired page
+        whatsappContentFrame.src = "whatsapp.html"; 
         whatsappContentModal.style.display = "flex";
     }
 
-    // Event listener to close the WhatsApp content modal
     whatsappContentClose.onclick = function() {
         whatsappContentModal.style.display = "none";
-        whatsappContentFrame.src = ""; // Clear the iframe source to stop loading content when closed
+        whatsappContentFrame.src = ""; 
     }
 
-    // Close the modal when clicking outside the modal content
     window.onclick = function(event) {
         if (event.target === whatsappContentModal) {
             whatsappContentModal.style.display = "none";
-            whatsappContentFrame.src = ""; // Clear the iframe source
+            whatsappContentFrame.src = ""; 
         }
     }
 });

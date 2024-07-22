@@ -11,34 +11,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" />
 
-
-    <!-- Script -->
-
-    <title>Music Player</title>
-
     <style>
-        /*
-
-        *,
-        *::before,
-        *::after {
-            margin: 0;
-            padding: 0;
-            box-sizing: inherit;
-        }
-        */
-
         html {
             font-size: 62.5%;
-            /* 1rem = 10px */
             box-sizing: border-box;
         }
 
         body {
             margin: 0;
             min-height: 100vh;
-            /*   background: #272C5C; */
-
             display: flex;
             justify-content: center;
             align-items: center;
@@ -51,12 +32,9 @@
             display: flex;
             align-items: center;
             flex-direction: column;
-
             padding: 2.5rem;
             margin: 1.5rem;
             width: 70rem;
-            /*            background-color: rgba(255, 255, 255, 0.3);
-*/
             background: #ffffff;
             border-radius: 10px;
             box-shadow: 0 1rem 5rem rgba(0, 0, 0, 0.2);
@@ -68,19 +46,10 @@
             margin-bottom: 2rem;
         }
 
-        /*
+
         .img-container img {
             height: 100%;
             width: 100%;
-            object-fit: cover;
-            border-radius: 8px;
-            box-shadow: 0 0.5rem 3.5rem rgba(0, 0, 0, 0.2);
-        }
-*/
-        .img-container img {
-            height: 100%;
-            width: 100%;
-            /* object-fit: cover; */
             border-radius: 8px;
             box-shadow: 0 0.5rem 3.5rem rgba(0, 0, 0, 0.2);
             justify-content: center;
@@ -100,7 +69,6 @@
             font-weight: 400;
         }
 
-        /* Progress */
         .progress-container {
             background: #f7f7f7;
             box-shadow: 0 0.5rem 2.5rem rgba(0, 0, 0, 0.25);
@@ -115,7 +83,6 @@
             background: #252525;
             border-radius: 5px;
             height: 100%;
-            /* change this to show progress */
             width: 0%;
             transition: width 0.1s linear;
             transition: opacity 0.15s;
@@ -129,7 +96,6 @@
             justify-content: space-between;
         }
 
-        /* Controls */
         .player-controls {
             display: flex;
             align-items: center;
@@ -155,7 +121,6 @@
             font-size: 6.4rem;
         }
 
-        /* Volume Controls */
         .volume-controls {
             display: flex;
             align-items: center;
@@ -190,7 +155,6 @@
             opacity: 1;
         }
 
-        /* Media Query: Tablets and Mobiles */
         @media only screen and (max-width: 37.5em) {
             html {
                 font-size: 50%;
@@ -198,7 +162,6 @@
 
             .player-container {
                 width: 100%;
-                /* padding: 2.5rem 1.5rem; */
             }
 
             .img-container {
@@ -213,7 +176,6 @@
             display: block;
             margin: auto;
             fill: currentColor;
-            /* This makes the SVG use the current text color */
         }
     </style>
 </head>
@@ -247,6 +209,7 @@
             <input type="range" min="0" max="100" value="50" class="volume-slider" onchange="setVolume()" />
         </div>
     </div>
+
     <script>
 
         const img = document.querySelector("img");
@@ -265,12 +228,8 @@
         const volumeBtn = document.querySelector(".volume-btn");
         const volumeSlider = document.querySelector(".volume-slider");
 
-        // Check if playing
         let isPlaying = false;
-        // Current Song Index
         let songIndex = 0;
-
-        // Music
         const songs = [
             {
                 name: "MD NATIJA (1)",
@@ -320,7 +279,6 @@
             }
         ];
 
-        // Update DOM
         const loadSong = function (song) {
             title.textContent = song.displayName;
             artist.textContent = song.artist;
@@ -338,10 +296,8 @@
 
         }
 
-        // On Load - Select First Song
         loadSong(songs[songIndex]);
 
-        // Play
         const playSong = function () {
             isPlaying = true;
             playBtn.classList.replace("fa-play-circle", "fa-pause-circle");
@@ -349,7 +305,6 @@
             music.play();
         }
 
-        // Pause
         const pauseSong = function () {
             isPlaying = false;
             playBtn.classList.replace("fa-pause-circle", "fa-play-circle");
@@ -357,7 +312,6 @@
             music.pause();
         }
 
-        // Mute/Unmute
         const toggleMute = function () {
             if (music.muted) {
                 music.muted = false;
@@ -372,7 +326,6 @@
             }
         }
 
-        // Update Progress Bar & Time
         const updateProgressBar = function (e) {
             if (isPlaying) {
                 const { duration, currentTime } = e.srcElement;
@@ -395,7 +348,6 @@
             }
         }
 
-        // Next Song
         const nextSong = function () {
             songIndex++;
             if (songIndex > songs.length - 1) {
@@ -405,7 +357,6 @@
             playSong();
         }
 
-        // Previous Song
         const prevSong = function () {
             songIndex--;
             if (songIndex < 0) {
@@ -415,7 +366,6 @@
             playSong();
         }
 
-        // Set Progress Bar
         const setProgressBar = function (e) {
             const width = this.clientWidth;
             const clickX = e.offsetX;
@@ -423,12 +373,10 @@
             music.currentTime = (clickX / width) * duration;
         };
 
-        // Set Volume
         const setVolume = function () {
             music.volume = volumeSlider.value / 100;
         };
 
-        // Event Listeners
         playBtn.addEventListener("click", () => (isPlaying ? pauseSong() : playSong()));
         prevBtn.addEventListener("click", prevSong);
         nextBtn.addEventListener("click", nextSong);
